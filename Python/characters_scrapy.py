@@ -2,8 +2,8 @@ import scrapy
 
 class BlogSpider(scrapy.Spider):
     name = 'characterspider'
-    start_urls = ['http://www.topito.com/top-meilleures-repliques-cinema-americain']
+    start_urls = ['http://www.topito.com/top-meilleurs-personnages-film']
 
     def parse(self, response):
-        for characters in response.css('div.col-main ::before li'):
-            yield {'character': characters.css('li ::text').extract_first()}
+        for characters in response.css('div.col-main li'):
+            yield {'character': characters.css('strong ::text').extract_first()}

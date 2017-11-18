@@ -68,7 +68,7 @@ def main_loop():
     while True:
         print_random_sentence()
         message = ('Voulez-vous voir une autre citation ?'
-                   'Pour sortir du programme, tapez [B].')
+                   ' Pour sortir du programme, tapez [B].')
         choice = input(message).upper()
         if choice == 'B':
             break
